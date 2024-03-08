@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changeset/create-tables.sql
+  - include:
+      file: classpath:/db/changelog/changeset/test-data/add-test-data-test.sql
+#  - changeSet:
+#      runOrder: "last"
+#      id: "test"
+#      author: "Nikita"
+#      changes:

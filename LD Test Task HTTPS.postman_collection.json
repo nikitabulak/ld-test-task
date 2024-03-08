@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "3fa911b3-9f76-4619-8526-0c74332996f3",
+		"name": "LD Test Task HTTPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20820532"
+	},
+	"item": [
+		{
+			"name": "auth Copy",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "all: login user by login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"usernameOrEmail\": \"casualuser\",\r\n\"password\": \"casualpassword\",\r\n\"isRememberMe\": \"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:8081/auth/login",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all: login user by email",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"usernameOrEmail\": \"test@gmail.com\",\r\n\"password\": \"testPassword1!\",\r\n\"isRememberMe\": \"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:8081/auth/login",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all: login user2",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"usernameOrEmail\": \"testUser2\",\r\n\"password\": \"testPassword2!\",\r\n\"isRememberMe\": \"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:8081/auth/login",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authenticated: logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/auth/logout",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticated: refresh access token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjYXN1YWx1c2VyIiwiaWF0IjoxNzA5NTQwNzY3LCJleHAiOjE3MDk2MjcxNjcsInJlbWVtYmVyTWUiOmZhbHNlLCJ0eXBlIjoiUkVGUkVTSCJ9.1L-Ea1Juvyap2_5EBl9YBJ1EIi7-_FlC0Ogf32zU8Zd0BDI-544UffaEAg7zJIdZwYqGF-pULkmVcP5-AMSdUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/auth/refresh-token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "all: login user by login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"usernameOrEmail\": \"casualuser\",\r\n\"password\": \"casualpassword\",\r\n\"isRememberMe\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all: login futureoperator by login Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"usernameOrEmail\": \"futureoperator\",\r\n\"password\": \"futurepassword\",\r\n\"isRememberMe\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: get reports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/user/reports",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: get reports with params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/user/reports?sort=asc&pageNumber=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: create report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reportContent\": \"Testing creation of new report\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/user/reports",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: create draft report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reportContent\": \"Testing creation of new draft report\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/user/reports/drafts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports",
+								"drafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: edit draft report",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\": \"7a74a987-b503-4944-b645-fb067f963098\",\r\n    \"authorId\": \"47400383-1246-4604-b391-6dbf64fdaf89\",\r\n    \"reportContent\": \"Testing edition of existing draft report\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/user/reports/drafts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports",
+								"drafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user: send draft report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/user/reports/drafts/7a74a987-b503-4944-b645-fb067f963098",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"reports",
+								"drafts",
+								"7a74a987-b503-4944-b645-fb067f963098"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "operator",
+			"item": [
+				{
+					"name": "all: login operator by login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"usernameOrEmail\": \"operator\",\r\n\"password\": \"operatorpassword\",\r\n\"isRememberMe\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "operator: get reports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/operator/reports",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"operator",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "operator: get reports with params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/operator/reports?sort=asc&pageNumber=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"operator",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "operator: get reports with params and name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/operator/reports?sort=asc&pageNumber=0&partOfName=Vasi",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"operator",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "partOfName",
+									"value": "Vasi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "operator: get report by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/operator/reports/a4582e1a-2ee1-49be-82aa-3377b65835a7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"operator",
+								"reports",
+								"a4582e1a-2ee1-49be-82aa-3377b65835a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "operator: response report by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/operator/reports/7a74a987-b503-4944-b645-fb067f963098?decision=reject",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"operator",
+								"reports",
+								"7a74a987-b503-4944-b645-fb067f963098"
+							],
+							"query": [
+								{
+									"key": "decision",
+									"value": "reject"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "administrator",
+			"item": [
+				{
+					"name": "all: login admin by login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"usernameOrEmail\": \"admin\",\r\n\"password\": \"adminpassword\",\r\n\"isRememberMe\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8081/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: get users with param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/users?pageNumber=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: give operator rights",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/users/25571ff4-a568-45c5-9e66-38050175a26d",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"users",
+								"25571ff4-a568-45c5-9e66-38050175a26d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: get reports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/reports",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: get reports with params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/reports?sort=asc&pageNumber=0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "asc"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: get reports with params and name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/admin/reports?sort=desc&pageNumber=0&partOfName=Grig",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"reports"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "partOfName",
+									"value": "Grig"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin: check user's phone number",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8081/dadata/check_phone_number/47400383-1246-4604-b391-6dbf64fdaf89",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"dadata",
+								"check_phone_number",
+								"47400383-1246-4604-b391-6dbf64fdaf89"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwOTkxMTU5NCwiZXhwIjoxNzA5OTE1MTk0LCJ0eXBlIjoiQUNDRVNTIn0.TU_IIA_RFm-Pb9SEukavWp8FEl8qFYeTB5bpxJVKpfOJ-27D9bY3lAklbsgqfHnEVrFDegKemWKMH2mrpjMisw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
